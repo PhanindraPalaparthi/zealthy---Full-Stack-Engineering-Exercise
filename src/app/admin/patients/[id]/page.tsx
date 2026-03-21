@@ -83,13 +83,19 @@ export default function PatientDetail() {
 
   const savePatient = async (e: React.FormEvent) => {
     e.preventDefault()
+  
+    if (patientForm.dob && patientForm.dob > new Date().toISOString().split('T')[0]) {
+      alert('Date of birth cannot be a future date')
+      return
+    }
+  
     setSavingPatient(true)
     await fetch(`/api/patients/${id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(patientForm) })
     setSavingPatient(false)
     setEditPatient(false)
     loadPatient()
   }
-
+  
   const openApptEdit = (a: Appointment) => {
     setEditAppt(a)
     setApptForm({ provider: a.provider, datetime: a.datetime.slice(0, 16), repeat: a.repeat, end_date: a.end_date || '' })

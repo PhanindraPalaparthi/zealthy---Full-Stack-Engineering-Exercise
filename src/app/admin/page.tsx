@@ -47,6 +47,12 @@ export default function AdminPatients() {
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
+  
+    if (form.dob && form.dob > new Date().toISOString().split('T')[0]) {
+      setError('Date of birth cannot be a future date')
+      return
+    }
+  
     setSaving(true)
     const res = await fetch('/api/patients', {
       method: 'POST',
@@ -157,7 +163,18 @@ export default function AdminPatients() {
             </div>
             <div>
               <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--navy)', marginBottom: 5 }}>Date of Birth</label>
-              <input className="input" type="date" value={form.dob} onChange={e => setForm({ ...form, dob: e.target.value })} />
+              <input 
+                    className="input" 
+                    type="date" 
+                    value={form.dob} 
+                    max={new Date().toISOString().split('T')[0]}
+                    onChange={e => {
+                      const date = e.target.value
+                      if (date <= new Date().toISOString().split('T')[0]) {
+                        setForm({ ...form, dob: date })
+                      }
+                    }}
+                />
             </div>
             <div>
               <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: 'var(--navy)', marginBottom: 5 }}>Address</label>
