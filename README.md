@@ -21,8 +21,8 @@ A full-stack web application built as part of the Zealthy engineering assessment
 
 | Requirement | Status |
 |-------------|--------|
-| Clean UI | ✅ |
-| Good code structure | ✅ |
+| UI | ✅ |
+| code structure | ✅ |
 | Proper database design | ✅ |
 | Thoughtful features (recurring appointments) | ✅ |
 | Patient Portal at `/` with login | ✅ |
@@ -135,7 +135,7 @@ INFO logs mark successful state changes worth auditing.
 
 ---
 
-## Proper Database Design
+## Database Design (Turso free Tier database is used)
 ```
 ┌─────────────────────────────────────────────────────┐
 │                      users                          │
