@@ -6,7 +6,7 @@ A full-stack web application built as part of the Zealthy engineering assessment
 
 ## Live Demo
 
-> **Patient Portal:** https://zealthy-full-stack-engineering-exer-ten.vercel.app/
+> **Patient Portal:** https://zealthy-full-stack-engineering-exer.vercel.app/
 
 **Test credentials:**
 
