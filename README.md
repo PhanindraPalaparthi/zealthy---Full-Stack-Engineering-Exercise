@@ -1,12 +1,4 @@
-# Zealthy Mini-EMR & Patient Portal
-
-A full-stack web application built as part of the Zealthy engineering assessment. The app is split into two sections — a provider-facing admin EMR and a patient-facing portal — both backed by the same database and authentication layer.
-
----
-
-## Live Demo
-
-> **Patient Portal:** https://zealthy-full-stack-engineering-exer.vercel.app/
+TeleDoc
 
 **Test credentials:**
 
@@ -54,7 +46,6 @@ A full-stack web application built as part of the Zealthy engineering assessment
 
 ## UI
 
-The UI was designed by referencing the live [Zealthy website](https://getzealthy.com) to extract the brand color palette — specifically the signature greens and teals used across their product. These were mapped into CSS variables and used consistently across both the EMR and patient portal:
 ```css
 --green:       #2D9B6F   /* primary brand green */
 --green-dark:  #1F7A54   /* hover states */
